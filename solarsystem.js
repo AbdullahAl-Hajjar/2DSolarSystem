@@ -48,7 +48,7 @@ function Planet(radius, distance, texture, orbit) {
 
 Planet.prototype.rotation = function() {
   if (this.orbitalLength > 0) {
-    let shortestDistance = sqrt(pow(this.distance, 2) * 2));
+    let shortestDistance = sqrt(pow(this.distance, 2) * 2);
     let netForce = (gravity * sun.radius * this.radius) / (pow(shortestDistance, 2));
     let force = netForce * (this.distance / shortestDistance);
     let acceleration = force / (this.radius);
