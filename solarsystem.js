@@ -50,15 +50,10 @@ Planet.prototype.rotation = function() {
   if (this.orbitalLength > 0) {
     let shortestDistance = sqrt(pow(this.distance, 2) + pow(this.distance, 2));
     let netForce = (gravity * sun.radius * this.radius) / (pow(shortestDistance, 2));
-
     let force = netForce * (this.distance / shortestDistance);
-
     let acceleration = force / (this.radius);
-
     let velocity = this.distance + (frameCount * acceleration);
-
     let revolution = this.distance + (0.1 * velocity);
-
     this.angle = revolution;
   }
   for (let planet of this.planet) {
